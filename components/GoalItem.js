@@ -4,7 +4,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const GoalItem = props => {
     return (
-        <TouchableOpacity onPress={props.onDelete}>
+        // Adds a visual feedback on touch
+        <TouchableOpacity activeOpacity={0.8} onPress={props.onDelete.bind(this, props.id)}>
             <View style={styles.listItem} onPress={props.onDelete}>
                 {/* Have less styling options with <Text> but can wrap the <Text> component in a <View> component to get have more styling options */}
                 <Text>{props.title}</Text>
